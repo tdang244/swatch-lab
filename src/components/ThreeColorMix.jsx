@@ -27,12 +27,12 @@ export default function ThreeColorMix({ color1, color2, color3 }) {
   const midB = { x: (bl.x + br.x) / 2, y: (bl.y + br.y) / 2 };
   const center = { x: W / 2, y: (top.y + bl.y) / 2 + 20 };
 
-  const renderArrow = (x1, y1, x2, y2, col, endOffset = 20) => {
+  const renderArrow = (x1, y1, x2, y2, col, endOffset = 14) => {
     const dx = x2 - x1, dy = y2 - y1;
     const len = Math.sqrt(dx * dx + dy * dy);
     if (len === 0) return null;
     const ux = dx / len, uy = dy / len;
-    const sx = x1 + ux * 28, sy = y1 + uy * 28;
+    const sx = x1 + ux * 20, sy = y1 + uy * 20;
     const ex = x2 - ux * endOffset, ey = y2 - uy * endOffset;
     const sz = 7;
     return (
@@ -61,21 +61,21 @@ export default function ThreeColorMix({ color1, color2, color3 }) {
         {renderArrow(br.x, br.y, midTR.x, midTR.y, color3 + "88")}
         {renderArrow(bl.x, bl.y, midB.x, midB.y, color2 + "88")}
         {renderArrow(br.x, br.y, midB.x, midB.y, color3 + "88")}
-        {renderArrow(midTL.x, midTL.y, center.x, center.y, "#b0a89e", 28)}
-        {renderArrow(midTR.x, midTR.y, center.x, center.y, "#b0a89e", 28)}
-        {renderArrow(midB.x, midB.y, center.x, center.y, "#b0a89e", 28)}
+        {renderArrow(midTL.x, midTL.y, center.x, center.y, "#b0a89e", 20)}
+        {renderArrow(midTR.x, midTR.y, center.x, center.y, "#b0a89e", 20)}
+        {renderArrow(midB.x, midB.y, center.x, center.y, "#b0a89e", 20)}
 
-        {renderSwatch(midTL.x, midTL.y, 14, mix12)}
-        {renderSwatch(midTR.x, midTR.y, 14, mix13)}
-        {renderSwatch(midB.x, midB.y, 14, mix23)}
+        {renderSwatch(midTL.x, midTL.y, 11, mix12)}
+        {renderSwatch(midTR.x, midTR.y, 11, mix13)}
+        {renderSwatch(midB.x, midB.y, 11, mix23)}
 
-        <circle cx={center.x} cy={center.y} r={26} fill={centerMix} opacity="0.9" filter="url(#watercolorSoft)" />
-        <circle cx={center.x} cy={center.y} r={26} fill="none" stroke="#f0ece6" strokeWidth="2.5" />
-        <text x={center.x} y={center.y + 42} textAnchor="middle" fontSize="13" fontWeight="600" fill="#7a7067" fontFamily="'EB Garamond', Georgia, serif">All three mixed</text>
+        <circle cx={center.x} cy={center.y} r={18} fill={centerMix} opacity="0.9" filter="url(#watercolorSoft)" />
+        <circle cx={center.x} cy={center.y} r={18} fill="none" stroke="#f0ece6" strokeWidth="2.5" />
+        <text x={center.x} y={center.y + 34} textAnchor="middle" fontSize="13" fontWeight="600" fill="#7a7067" fontFamily="'EB Garamond', Georgia, serif">All three mixed</text>
 
-        {renderSwatch(top.x, top.y, 24, color1, getColorName(color1).pigment, `"${getColorName(color1).friendly}"`)}
-        {renderSwatch(bl.x, bl.y, 24, color2, getColorName(color2).pigment, `"${getColorName(color2).friendly}"`)}
-        {renderSwatch(br.x, br.y, 24, color3, getColorName(color3).pigment, `"${getColorName(color3).friendly}"`)}
+        {renderSwatch(top.x, top.y, 16, color1, getColorName(color1).pigment, `"${getColorName(color1).friendly}"`)}
+        {renderSwatch(bl.x, bl.y, 16, color2, getColorName(color2).pigment, `"${getColorName(color2).friendly}"`)}
+        {renderSwatch(br.x, br.y, 16, color3, getColorName(color3).pigment, `"${getColorName(color3).friendly}"`)}
       </svg>
 
       <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
