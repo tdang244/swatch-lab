@@ -47,8 +47,8 @@ export default function ThreeColorMix({ color1, color2, color3 }) {
     <g>
       <circle cx={cx} cy={cy} r={r} fill={col} opacity="0.85" filter="url(#watercolorSoft)" />
       <circle cx={cx} cy={cy} r={r} fill="none" stroke="#f0ece6" strokeWidth="2" />
-      {label && <text x={cx} y={cy + r + 18} textAnchor="middle" fontSize="14" fontWeight="600" fill="#5a534b" fontFamily="'EB Garamond', Georgia, serif">{label}</text>}
-      {sublabel && <text x={cx} y={cy + r + 33} textAnchor="middle" fontSize="12" fill="#b0a89e" fontStyle="italic" fontFamily="'EB Garamond', Georgia, serif">{sublabel}</text>}
+      {label && <text x={cx} y={cy + r + 14} textAnchor="middle" fontSize="10" fontWeight="600" fill="#5a534b" fontFamily="'EB Garamond', Georgia, serif">{label}</text>}
+      {sublabel && <text x={cx} y={cy + r + 25} textAnchor="middle" fontSize="9" fill="#b0a89e" fontStyle="italic" fontFamily="'EB Garamond', Georgia, serif">{sublabel}</text>}
     </g>
   );
 
@@ -71,7 +71,7 @@ export default function ThreeColorMix({ color1, color2, color3 }) {
 
         <circle cx={center.x} cy={center.y} r={18} fill={centerMix} opacity="0.9" filter="url(#watercolorSoft)" />
         <circle cx={center.x} cy={center.y} r={18} fill="none" stroke="#f0ece6" strokeWidth="2.5" />
-        <text x={center.x} y={center.y + 34} textAnchor="middle" fontSize="13" fontWeight="600" fill="#7a7067" fontFamily="'EB Garamond', Georgia, serif">All three mixed</text>
+        <text x={center.x} y={center.y + 28} textAnchor="middle" fontSize="10" fontWeight="600" fill="#7a7067" fontFamily="'EB Garamond', Georgia, serif">All three mixed</text>
 
         {renderSwatch(top.x, top.y, 16, color1, getColorName(color1).pigment, `"${getColorName(color1).friendly}"`)}
         {renderSwatch(bl.x, bl.y, 16, color2, getColorName(color2).pigment, `"${getColorName(color2).friendly}"`)}
