@@ -3,6 +3,7 @@ import { useIsMobile } from "../hooks/useIsMobile.js";
 import { hexToHsl } from "../utils/colorMath.js";
 import { getColorName, getTemperature, getTemperatureLabel, generatePalettes } from "../utils/colorNames.js";
 import { WATERCOLOR_PIGMENTS, COLOR_GROUPS } from "../constants/pigments.js";
+import { findBestMix } from "../utils/watercolorMix.js";
 import { CARD_STYLE, pillButton, presetButton, tabButton } from "../constants/styles.js";
 import WatercolorFilter from "./WatercolorFilter.jsx";
 import InteractiveColorWheel from "./InteractiveColorWheel.jsx";
@@ -293,7 +294,7 @@ export default function WatercolorColorLab() {
                 palette={p}
                 themeColor={themeColor}
                 isMobile={isMobile}
-                onSelectMixColor={(c) => { setMixColor(c); setActiveTab("mixing"); }}
+                onSelectMixColor={(c) => { setThemeColor(c); setMixColor(findBestMix(c, WATERCOLOR_PIGMENTS)); setMixMode(2); setActiveTab("mixing"); }}
               />
             ))}
           </div>
